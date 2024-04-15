@@ -4,12 +4,12 @@ A Go package to decode HTTP form and query parameters.
 The only requirement is [Go 1.12](http://golang.org/doc/go1.12) or later.
 
 [![Build Status](https://travis-ci.org/monoculum/formam.svg?branch=master)](https://travis-ci.org/monoculum/formam)
-[![GoDoc](https://godoc.org/github.com/monoculum/formam/v3?status.svg)](https://pkg.go.dev/github.com/monoculum/formam/v3)
+[![GoDoc](https://godoc.org/github.com/iwrk-platform/formam/v3?status.svg)](https://pkg.go.dev/github.com/iwrk-platform/formam/v3)
 
 ## Install
 
 ```
-go get github.com/monoculum/formam/v3
+go get github.com/iwrk-platform/formam/v3
 ```
 
 ## Features

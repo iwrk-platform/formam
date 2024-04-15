@@ -469,6 +469,10 @@ func (dec *Decoder) decode() error {
 	case reflect.String:
 		dec.curr.SetString(dec.currValues[0])
 	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
+		if dec.currValues[0] == "" {
+			dec.curr.SetInt(0)
+			break
+		}
 		num, err := strconv.ParseInt(dec.currValues[0], 10, dec.curr.Type().Bits())
 		if err != nil {
 			code := ErrCodeConversion
@@ -479,6 +483,10 @@ func (dec *Decoder) decode() error {
 		}
 		dec.curr.SetInt(num)
 	case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Uintptr:
+		if dec.currValues[0] == "" {
+			dec.curr.SetUint(0)
+			break
+		}
 		num, err := strconv.ParseUint(dec.currValues[0], 10, dec.curr.Type().Bits())
 		if err != nil {
 			code := ErrCodeConversion
@@ -489,6 +497,10 @@ func (dec *Decoder) decode() error {
 		}
 		dec.curr.SetUint(num)
 	case reflect.Float32, reflect.Float64:
+		if dec.currValues[0] == "" {
+			dec.curr.SetFloat(0)
+			break
+		}
 		num, err := strconv.ParseFloat(dec.currValues[0], dec.curr.Type().Bits())
 		if err != nil {
 			code := ErrCodeConversion

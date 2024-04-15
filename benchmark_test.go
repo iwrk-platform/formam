@@ -1,11 +1,10 @@
 package formam_test
 
 import (
+	"github.com/iwrk-platform/formam/v3"
 	"net/url"
 	"testing"
 	"time"
-
-	"github.com/monoculum/formam/v3"
 )
 
 type Simple struct {
